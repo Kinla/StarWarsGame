@@ -10,10 +10,35 @@
     <title>Star Wars Game</title>
 </head>
 <body>
-    <div>
-        <h4>Select Your Character</h4>
-        <div class="card col-1"><img class="img-fluid" src="assets/image/darthVader.jpg"></div>
-        <div></div>
+    <div class="wrapper">
+        <aside class="aside aside-1">
+            <div class="row">
+                <div class="card col-5 mx-auto mb-4 char"><p class="name">Darth Vader</p><img class="img-fluid" id="vader" src="assets/image/darthVader.jpg"><p class="hp">HP</p></div>
+                <div class="card col-5 mx-auto mb-4 char"><p class="name">Yoda</p><img class="img-fluid" id="yoda" src="assets/image/yoda.jpg"><p class="hp">HP</p></div>
+                <div class="card col-5 mx-auto mb-4 char"><p class="name">Rey</p><img class="img-fluid" id="rey" src="assets/image/rey.jpg"><p class="hp">HP</p></div>
+                <div class="card col-5 mx-auto mb-4 char"><p class="name">Obi-Wan</p><img class="img-fluid" id="kenobi" src="assets/image/kenobi.jpg"><p class="hp">HP</p></div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h1>STAR WARS GAME</h1>
+                    <p>Select your character.<br>Battle the rest to win!</p>
+                </div>
+            </div>
+        </aside>
+        <article class="main">
+            <div class="card commentary">
+                <p>Rolling commentary...</p>
+                <p>
+                    <span>x hit x for y points.</span><br>
+                    <span>x has defeated x.</span>
+                </p>
+                
+            </div>
+            <br>
+            <div class="card fight">
+            </div>
+        </article>    
+            
     </div>
     
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

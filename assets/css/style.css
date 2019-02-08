@@ -1,0 +1,42 @@
+.name, .hp {
+    margin: 0;
+    text-align: center;
+    font-size: .7rem;
+}
+
+.wrapper {
+    display: flex;  
+    flex-flow: row wrap;
+    text-align: center;
+  }
+  
+  .wrapper > * {
+    padding: 10px;
+    flex: 1 100%;
+  }
+  
+  .main {
+    text-align: left;
+  }
+  
+  .comment {
+
+  }
+  
+  .fight {
+
+  }
+  
+  @media all and (min-width: 600px) {
+    .aside { flex: 1 0 0; }
+  }
+  
+  @media all and (min-width: 800px) {
+    .main    { flex: 3 0px; }
+    .aside-1 { order: 1; } 
+    .main    { order: 2; }
+  }
+  
+  body {
+    padding: 2em; 
+  }
