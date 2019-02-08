@@ -3,6 +3,8 @@
     src:url("../font/deathstar.otf");
 }
 
+@import url('https://fonts.googleapis.com/css?family=Share+Tech+Mono');
+
 .name, .hp {
     margin: 0;
     text-align: center;
@@ -22,24 +24,46 @@
   
   .main {
     text-align: left;
+    color: black;
   }
   
-  .comment {
-
-  }
-
   .fight {
     height: 100%;
     background: url(../image/bg.jpg);
     border: black;
   }
 
+  .top {
+      height: 75.63px;
+  }
+
+  .char #comment {
+      display: inline-block;
+      overflow: auto;
+  }
+
+  
   #gameH {
       font-family: "deathStarFont";
   }
   
+  .resetBtn {
+    font-family: "deathStarFont";
+    background: black;
+    color: white;
+    border:none;
+}
+
+.resetBtn:focus {
+    display: none;
+}
+
+.opp {
+    cursor: url(../image/lightSaber.png), auto;
+}
   #gameTitle {
-      background: url(../image/CloudyOldAcaciarat.webp);
+      background: url(../image/warpSpeed.webp) no-repeat center center;
+      background-size: ;
       color: #ffffff;
   }
 
@@ -55,4 +79,5 @@
   
   body {
     padding: 2em; 
+    font-family: 'Share Tech Mono', monospace;
   }
