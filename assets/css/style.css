@@ -6,9 +6,16 @@
 @import url('https://fonts.googleapis.com/css?family=Share+Tech+Mono');
 
 .name, .hp {
-    margin: 0;
     text-align: center;
     font-size: .7rem;
+}
+
+h2 {
+    font-size: 1rem;
+}
+
+p {
+    margin: 0;
 }
 
 .wrapper {
@@ -37,8 +44,11 @@
       height: 75.63px;
   }
 
-  .char #comment {
+  .char, #comment {
       display: inline-block;
+  }
+
+  #comment {
       overflow: auto;
   }
 
@@ -47,20 +57,17 @@
       font-family: "deathStarFont";
   }
   
-  .resetBtn {
+  .resetBtn, .atkBtn {
     font-family: "deathStarFont";
     background: black;
     color: white;
     border:none;
 }
 
-.resetBtn:focus {
+.resetBtn:focus,  .atkBtn:focus {
     display: none;
 }
 
-.opp {
-    cursor: url(../image/lightSaber.png), auto;
-}
   #gameTitle {
       background: url(../image/warpSpeed.webp) no-repeat center center;
       background-size: ;

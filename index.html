@@ -12,59 +12,61 @@
 <body>
     <div class="wrapper">
         <aside class="aside aside-1">
-            <div class="row">
-                <div class="card col-5 mx-auto mb-4 char"><p class="name char0">Vader</p><img class="img-fluid" id="vader" src="assets/image/darthVader.jpg"><p class="hp" id="hp0">HP</p></div>
-                <div class="card col-5 mx-auto mb-4 char"><p class="name char1">Yoda</p><img class="img-fluid" id="yoda" src="assets/image/yoda.jpg"><p class="hp" id="hp1">HP</p></div>
-                <div class="card col-5 mx-auto mb-4 char"><p class="name char2">Rey</p><img class="img-fluid" id="rey" src="assets/image/rey.jpg"><p class="hp" id="hp2">HP</p></div>
-                <div class="card col-5 mx-auto mb-4 char"><p class="name char3">Kenobi</p><img class="img-fluid" id="kenobi" src="assets/image/kenobi.jpg"><p class="hp" id="hp3">HP</p></div>
+            <div class="row" id="start">
+                <div class="card col-5 mx-auto mb-4 char" id="vader"><p class="name char-0">Vader</p><img class="img-fluid" src="assets/image/img0.jpg"><p class="hp" id="hp-0"></p></div>
+                <div class="card col-5 mx-auto mb-4 char" id="yoda"><p class="name char-1">Yoda</p><img class="img-fluid" src="assets/image/img1.jpg"><p class="hp" id="hp-1"></p></div>
+                <div class="card col-5 mx-auto mb-4 char" id="rey"><p class="name char-2">Rey</p><img class="img-fluid" src="assets/image/img2.jpg"><p class="hp" id="hp-2"></p></div>
+                <div class="card col-5 mx-auto mb-4 char" id="kenobi"><p class="name char-3">Kenobi</p><img class="img-fluid" src="assets/image/img3.jpg"><p class="hp" id="hp-3"></p></div>
             </div>
             <div class="card" id="gameTitle">
                 <div class="card-body">
-                    <h1 id="gameH">STAR WARS GAME</h1>
-                    <p>Select your character.<br>Battle the rest to win!</p>
+                    <h1 id="gameH">STAR WARS RPG</h1>
+                    <h2>May the force be with you.</h2>
                 </div>
             </div>
         </aside>
         <article class="main">
             <div class="rounded fight px-3 py-3">
                 <div class="row top">
-                    <button type="button" class=" col-1 resetBtn rounded mx-auto">
+                    <button type="button" class="atkBtn rounded col-1 ml-auto mr-0 px-1">
                         Attack
                     </button>
                     <div class="card col-6 mx-auto overflow-auto" id="comment">
-
+                        <p>Click on a character to start.</p>
                     </div>
-                    <div class="card col-1 mx-0 char"><p class="name" id="opp0">Vader</p><img class="img-fluid" id="vader" src="assets/image/darthVader.jpg"><p class="hp">HP</p></div>
-                    <div class="card col-1 mx-0 char"><p class="name" id="opp1">Yoda</p><img class="img-fluid" id="yoda" src="assets/image/yoda.jpg"><p class="hp">HP</p></div>
-                    <div class="card col-1 mx-0 char"><p class="name" id="opp2">Rey</p><img class="img-fluid" id="rey" src="assets/image/rey.jpg"><p class="hp">HP</p></div>
+                        <div class="card col-1 mx-0 char" id="opp-0"><p class="name" id="oppName-0"></p><img class="img-fluid" id="img-0"><p class="hp" id="oppHP-0"></p></div>
+                        <div class="card col-1 mx-0 char" id="opp-1"><p class="name" id="oppName-1"></p><img class="img-fluid" id="img-1"><p class="hp" id="oppHP-1"></p></div>
+                        <div class="card col-1 mx-0 char" id="opp-2"><p class="name" id="oppName-2"></p><img class="img-fluid" id="img-2"><p class="hp" id="oppHP-2"></p></div>
                     <button type="button" class="resetBtn rounded col-1 mx-auto">
                         Reset
                     </button>
                 </div> 
                 <br><br>
                 <div class="card-deck text-center">
-                    <div class="card col-4 mx-auto you">
+                    <div class="card col-4 mx-auto" id="you">
                         <div class="card-body">
                             <h5>You</h5>
                             <div>
-                                <div class="card"><p class="mb-0 yourName">Darth Vader</p><img class="img-fluid" id="yourImg" src="assets/image/darthVader.jpg"><p class="mb-0 yourHP">HP</p></div>
+                                <div class="card"><p class="mb-0" id="yourName"></p><img class="img-fluid" id="yourImg"><p class="mb-0" id="yourHP"></p></div>
                             </div>
                             <br>
+                            <!-- taking out HP bar for now until I get to do this bonus part
                             <div class="progress">
                                 <div class="progress-bar w-75" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
+                            </div>-->
                         </div>
                     </div>
-                    <div class="card col-4 mx-auto opp">
+                    <div class="card col-4 mx-auto" id="opp">
                         <div class="card-body">
                             <h5>Current Opponent</h5>
                             <div>
-                                <div class="card"><p class="mb-0 oppName">Darth Vader</p><img class="img-fluid" id="oppImg" src="assets/image/darthVader.jpg"><p class="mb-0 oppHP">HP</p></div>
+                                <div class="card"><p class="mb-0 oppName"></p><img class="img-fluid" id="oppImg"><p class="mb-0 oppHP"></p></div>
                             </div>
                             <br>
+                            <!-- taking out HP bar for now until I get to do this bonus part
                             <div class="progress">
                                 <div class="progress-bar w-75" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
+                            </div>-->
                         </div>
                     </div>
                 </div>
