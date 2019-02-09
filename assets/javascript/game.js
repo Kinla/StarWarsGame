@@ -6,6 +6,13 @@ rey = 2
 kenobi =3
 */
 
+var fighters = [vader, yoda, rey, kenobi];
+
+var vader = {
+    name: "Vader",
+    fullName: "Darth Vader",
+    hp: 
+}
 //base
 var charList = ["Vader", "Yoda", "Rey", "Kenobi"];
 var fullName = ["Darth Vader", "Yoda", "Rey", "Obi-Wan Kenobi"]
