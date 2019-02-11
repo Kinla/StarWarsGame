@@ -28,16 +28,20 @@
         <article class="main">
             <div class="rounded fight px-3 py-3">
                 <div class="row top">
+                    <!-- need to relocate button ... not fitting properly
                     <button type="button" class="atkBtn rounded col-1 ml-auto mr-0 px-1">
                         Attack
                     </button>
+                    -->
                     <div class="card col-6 mx-auto overflow-auto" id="comment">
                         <p>Click on a character to start.</p>
                     </div>
-                    <div id="opp">
-                        <div class="card col-1 mx-0 char" id="opp-0"><p class="name" id="oppName-0"></p><img class="img-fluid" id="img-0"><p class="hp" id="oppHP-0"></p></div>
-                        <div class="card col-1 mx-0 char" id="opp-1"><p class="name" id="oppName-1"></p><img class="img-fluid" id="img-1"><p class="hp" id="oppHP-1"></p></div>
-                        <div class="card col-1 mx-0 char" id="opp-2"><p class="name" id="oppName-2"></p><img class="img-fluid" id="img-2"><p class="hp" id="oppHP-2"></p></div>
+                    <div class="oppAll col-4 mx-0">
+                        <!-- commenting out to test new JS script
+                        <div class="card col-1 mx-0 opp" id="opp-0"><p class="name" id="oppName-0"></p><img class="img-fluid" id="img-0"><p class="hp" id="oppHP-0"></p></div>
+                        <div class="card col-1 mx-0 opp" id="opp-1"><p class="name" id="oppName-1"></p><img class="img-fluid" id="img-1"><p class="hp" id="oppHP-1"></p></div>
+                        <div class="card col-1 mx-0 opp" id="opp-2"><p class="name" id="oppName-2"></p><img class="img-fluid" id="img-2"><p class="hp" id="oppHP-2"></p></div>
+                        -->
                     </div>
                     <button type="button" class="resetBtn rounded col-1 mx-auto">
                         Reset
@@ -45,11 +49,11 @@
                 </div> 
                 <br><br>
                 <div class="card-deck text-center">
-                    <div class="card col-4 mx-auto" id="you">
+                    <div class="card col-4 mx-auto you">
                         <div class="card-body">
                             <h5>You</h5>
-                            <div>
-                                <div class="card"><p class="mb-0" id="yourName"></p><img class="img-fluid" id="yourImg"><p class="mb-0" id="yourHP"></p></div>
+                            <div id="you">
+                                <!-- comementing out but keeping code for JS file <div class="card"><p class="mb-0" id="yourName"></p><img class="img-fluid" id="yourImg"><p class="mb-0" id="yourHP"></p></div>-->
                             </div>
                             <br>
                             <!-- taking out HP bar for now until I get to do this bonus part
@@ -58,10 +62,10 @@
                             </div>-->
                         </div>
                     </div>
-                    <div class="card col-4 mx-auto" id="curOpp">
+                    <div class="card col-4 mx-auto curOpp">
                         <div class="card-body">
                             <h5>Current Opponent</h5>
-                            <div>
+                            <div id="curOpp">
                                 <div class="card"><p class="mb-0 oppName"></p><img class="img-fluid" id="oppImg"><p class="mb-0 oppHP"></p></div>
                             </div>
                             <br>

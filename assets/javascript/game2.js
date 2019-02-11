@@ -1,3 +1,4 @@
+/* not sure how to set random HP and ATK yet... will figure out later if have time
 // function to set up HP between 100 and 200
 function setHP () {
     for (var i = 0; i < charList.length; i++){
@@ -13,16 +14,15 @@ function setATK () {
     };
 };
 
+*/
 
-var charList = [vader, yoda, rey, kenobi];
-console.log(charList[0].hp);
 
 var vader = {
     id: "vader",
     name: "Vader",
     fullName: "Darth Vader",
-    hp: return Math.floor(Math.random() * 101) + 100,
-    baseATK: return Math.floor(Math.random() * 16) + 5,
+    hp: 100,
+    baseATK: 20,
     atk: 0,
     src: "./assets/image/img0.jpg",
     isYou: false,
@@ -34,8 +34,8 @@ var yoda = {
     id: "yoda",
     name: "Yoda",
     fullName: "Yoda",
-    hp: setHP(),
-    baseATK: Math.floor(Math.random() * 16) + 5,
+    hp: 120,
+    baseATK: 15,
     atk: 0,
     src: "./assets/image/img1.jpg",
     isYou: false,
@@ -47,8 +47,8 @@ var rey = {
     id: "rey",
     name: "Rey",
     fullName: "Rey",
-    hp: Math.floor(Math.random() * 101) + 100,
-    baseATK: Math.floor(Math.random() * 16) + 5,
+    hp: 200,
+    baseATK: 10,
     atk: 0,
     src: "./assets/image/img2.jpg",
     isYou: false,
@@ -60,8 +60,8 @@ var kenobi = {
     id: "kenobi",
     name: "Kenobi",
     fullName: "Obi-Wan Kenobi",
-    hp: Math.floor(Math.random() * 101) + 100,
-    baseATK: Math.floor(Math.random() * 16) + 5,
+    hp: 150,
+    baseATK: 13,
     atk: 0,
     src: "./assets/image/img3.jpg",
     isYou: false,
@@ -69,16 +69,18 @@ var kenobi = {
     isDead: false,
 };
 
+var charList = [vader, yoda, rey, kenobi];
 
 
 // link click on image and match the array object
 function idFighter (divID) { // going to accept divID as argument
-    for (var i; i < charList.length; i++){
-        if (divID === charList[i]) {
+    for (var i = 0; i < charList.length; i++){
+        if (divID === charList[i].id) {
             return charList[i];
         }
     }
 };
+
 // on game start and reset function
 $(document).ready(resetGame());
 
@@ -88,9 +90,6 @@ function resetGame(){
     //make sure to clear any lingering atk value
     //make sure to set isYou, isCurOpp, isDead for all to false
     for (var i = 0; i < charList.length; i++){
-        charList[i].hp = Math.floor(Math.random() * 101) + 100;
-        charList[i].baseATK = Math.floor(Math.random() * 16) + 5;
-        charList[i].atk = 0;
         charList[i].isYou = false;
         charList[i].isCurOpp = false;
         charList[i].isDead = false;
@@ -103,7 +102,7 @@ function resetGame(){
     //set #start, #you, #opp, #curopp to hide
     //add commentary for instruction to start game.
     $("#start").show();
-    $("#opp-0, #opp-1, #opp-2, #you, #opp").hide();
+    $(".opp, .you, .curOpp").hide();
     $("#comment").empty().html("<p>Click on a character to start.</p>");
 };
 
@@ -111,26 +110,59 @@ function resetGame(){
 //setting up click events
     //set you + opponents
     $(".char").click(function(){
-        var id = $(this).attr("id");
-        var fighter = idFighter (id);
+        var fighter = idFighter($(this).attr("id"));
         fighter.isYou = true; // set YOU
-        
-        //execute function for populating "youDIV"
 
-        //use for loop to populate opp div
-        for (var i; i < charList.length; i++){
-            if (!fighter.isYou){
-                
+        //set display to show / hid / comment as appropriate
+        $("#start").hide();
+        $(".you").show();
+        $(".oppAll").show();
+        $("#comment").append("<p>Select your opponent from the right.</p>");
+
+        //populate the YOU div
+        for (var i = 0; i < charList.length; i++){
+            if (charList[i].isYou){
+                $("#you").append('<div class="card id="' + charList[i].id + '"><p>' + charList[i].fullName + '</p><img class="img-fluid" src="' + charList[i].src + '"><p id="youHP">' + charList[i].hp + '</p></div>');
             }
         };
-        //execute function for populating the "oppDIV"
-
+        //populate the divs for you and oppALL
+        for (var i = 0; i < charList.length; i++){
+            if (!charList[i].isYou){
+                $(".oppAll").append('<div class="card col-4 mx-0 opp" id="' + charList[i].id + '"><p class="name">' + charList[i].name + '</p><img class="img-fluid" src="' + charList[i].src + '"><p class="hp">' + charList[i].hp + '</p></div>');
+            }
+        };
     });
 
     //select current opponent
+    $("div.oppAll div.opp").click(function(event, wasTriggered) {
+        if (wasTriggered) {
+            alert('triggered in code');
+        } else {
+            alert('triggered by mouse');
+        }
+    });
+
+    $(".opp").click(function(){
+        var fighter = idFighter($(this).attr("id"));
+        fighter.isCurOpp = true; // set current opponent
+        console.log($(".opp").click())
+        //mark current opponent by changing background and border color
+        $(this).addClass("enemy");
+        //set display to show / hid / comment as appropriate
+        $(".curOpp").show();
+        $("#comment").append("<p>Slaughter your enemy by clicking.</p>");
+
+        //populate the enemy div
+        for (var i = 0; i < charList.length; i++){
+            if (charList[i].isCurOpp){
+                $("#curOpp").append('<div class="card id="' + charList[i].id + '"><p>' + charList[i].fullName + '</p><img class="img-fluid" src="' + charList[i].src + '"><p id="youHP">' + charList[i].hp + '</p></div>');
+            }
+        };
+    });
+
 
 //set up the fight 
-    // attack button
+    // attack button (which is now just click on the current opponent)
 
     //update display for current fight
 
