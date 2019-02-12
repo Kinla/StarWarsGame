@@ -75,8 +75,19 @@ p {
 }
 
 .enemy {
-    background: rgba(255, 217, 0, 0.767);
-    border: gold;
+    background: rgba(255, 217, 0, 0.75);
+}
+
+.dead {
+    background: rgba(255, 0, 0, 0.75);
+}
+
+.noClick {
+    pointer-events:none;
+}
+
+.gray {
+    color: gray;
 }
 
 @media all and (min-width: 600px) {
