@@ -90,6 +90,13 @@ p {
     color: gray;
 }
 
+body {
+padding: 2em; 
+font-family: 'Share Tech Mono', monospace;
+}
+
+/* media sizing doesn't work below min width 800px */
+
 @media all and (min-width: 600px) {
 .aside { flex: 1 0 0; }
 }
@@ -100,7 +107,3 @@ p {
 .main    { order: 2; }
 }
 
-body {
-padding: 2em; 
-font-family: 'Share Tech Mono', monospace;
-}
