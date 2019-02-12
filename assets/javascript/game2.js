@@ -2,10 +2,10 @@ var vader = {
     id: "vader",
     name: "Vader",
     fullName: "Darth Vader",
-    hp: 60,
-    baseATK: 15,
+    hp: 75,
+    baseATK: 12,
     atk:0,
-    cATK: 20,
+    cATK: 10,
     src: "./assets/image/img0.jpg",
     isYou: false,
     isCurOpp: false,
@@ -16,10 +16,10 @@ var yoda = {
     id: "yoda",
     name: "Yoda",
     fullName: "Yoda",
-    hp: 120,
+    hp: 100,
     baseATK: 8,
     atk:0,
-    cATK: 15,
+    cATK: 12,
     src: "./assets/image/img1.jpg",
     isYou: false,
     isCurOpp: false,
@@ -30,10 +30,10 @@ var rey = {
     id: "rey",
     name: "Rey",
     fullName: "Rey",
-    hp: 200,
+    hp: 70,
     baseATK: 10,
     atk:0,
-    cATK: 5,
+    cATK: 17,
     src: "./assets/image/img2.jpg",
     isYou: false,
     isCurOpp: false,
@@ -44,10 +44,10 @@ var kenobi = {
     id: "kenobi",
     name: "Kenobi",
     fullName: "Obi-Wan Kenobi",
-    hp: 150,
-    baseATK: 12,
+    hp: 115,
+    baseATK: 8,
     atk:0,
-    cATK: 10,
+    cATK: 7,
     src: "./assets/image/img3.jpg",
     isYou: false,
     isCurOpp: false,
@@ -72,7 +72,8 @@ $(document).ready(resetGame());
 var win = 0;
 
 function resetGame(){
-    //make sure HP/baseATK for each char is set at begining (i think this is automatic in my current set up)
+    //make sure HP/ATK for each char is set at begining (i think this is automatic in my current set up)
+        //don't know how to do this right.
     //make sure to clear any lingering atk value
     win = 0;
 
@@ -178,8 +179,6 @@ var you, enemy;
         you.atk += you.baseATK;
         enemy.hp -= you.atk;
         you.hp -= enemy.cATK;
-        console.log(you.atk, you.baseATK, you.cATK, you.hp);
-        console.log(enemy.atk, enemy.baseATK, enemy.cATK, enemy.hp);
         $("#comment").append("<p>You hit " + enemy.fullName + " for " + you.atk+ ".</p>");
         $("#enemyHP").html(enemy.hp);
         $("#comment").append("<p>" + enemy.fullName + " hits you for " + enemy.cATK+ ".</p>");
@@ -242,5 +241,5 @@ function wonGame () {
 
 //set up reset button
 $(".resetBtn").click(function(){
-    resetGame();
+    location.reload(); //cannot figure out how to reset hp/atk so cheating by reloading page
 });
