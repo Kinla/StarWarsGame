@@ -1,4 +1,4 @@
-# StarWarsGame
+# Star Wars RPG
 ### Overview
 
 This is a simple Star Wars Themed RPG game where you can choose to be Obi-Wan Kenobi, Yoda, Vader or Rey. Your must defeat all 3 other to win the game!
