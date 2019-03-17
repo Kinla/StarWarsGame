@@ -55,4 +55,8 @@ Link to game: https://kinla.github.io/StarWarsGame/
 
 ### Improvements
 
-1. Once fighter is selected 
+1. Once fighter is selected the "logo" would be moved towards the top of the right side coloumn or shrink to verticle. Currently taking up too much room
+2. Try to give this game a mobile responsive design
+3. Add HP bars.
+4. Make it so that there is no `attack` button. You can just click on the defender's picture to kill them.
+5. Change cursor to a light sabor on attaak
